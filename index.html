@@ -16,99 +16,80 @@
   --transition: all 0.4s ease;
 }
 
-body { 
-  margin:0; 
-  font-family:'Poppins',sans-serif; 
+body {
+  margin:0;
+  font-family:'Poppins',sans-serif;
   color:var(--text-dark);
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-              url('https://images.unsplash.com/photo-1610622141526-3b7b77e9e2e8?auto=format&fit=crop&w=1600&q=80');
-  background-attachment: fixed; background-size: cover; background-position: center;
-  scroll-behavior: smooth; transition: background 0.5s ease;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1610622141526-3b7b77e9e2e8?auto=format&fit=crop&w=1600&q=80');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  scroll-behavior: smooth;
+  transition: background 0.5s ease;
 }
 
-header { 
-  backdrop-filter: blur(12px); 
+header {
+  backdrop-filter: blur(12px);
   background-color: rgba(255, 255, 255, 0.7);
-  padding:20px 10%; 
-  position: sticky; top:0; 
-  z-index:1000; 
+  padding:20px 10%;
+  position: sticky;
+  top:0;
+  z-index:1000;
   display:flex;
-  justify-content: space-between; 
-  align-items:center; 
+  justify-content: space-between;
+  align-items:center;
   border-bottom:2px solid var(--accent);
 }
+
 header h1 { color: var(--primary); font-size:1.8rem; font-weight:bold;}
 nav a { color: var(--text-dark); text-decoration:none; margin:0 15px; font-weight:500; transition:var(--transition);}
 nav a:hover { color: var(--accent);}
 
 main { text-align:center; padding:80px 10%; }
-.hero { color: var(--text-light); padding:80px 10%; background: rgba(26,71,49,0.8);
-  border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,0.3); animation:fadeIn 1.2s ease;}
+
+.hero {
+  color: var(--text-light);
+  padding:80px 10%;
+  background: rgba(26,71,49,0.8);
+  border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.3);
+  animation:fadeIn 1.2s ease;
+}
+
 .hero h2 { font-size:2.8rem; margin-bottom:10px; color: var(--gold);}
 .hero p { font-size:1.2rem; color:#e0e0e0;}
 
-section { background: var(--card-bg); margin:50px auto; padding:50px 30px;
-  border-radius:16px; max-width:1200px; box-shadow:0 10px 25px rgba(0,0,0,0.15);
-  animation: fadeUp 1s ease; transition: var(--transition);}
-section:hover { transform: translateY(-5px); }
+section {
+  background: var(--card-bg);
+  margin:50px auto;
+  padding:50px 30px;
+  border-radius:16px;
+  max-width:1200px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  animation: fadeUp 1s ease;
+  transition: var(--transition);
+}
 
+section:hover { transform: translateY(-5px); }
 .section-title { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
 
 /* Horizontal scroll cards */
-.card-container {
-  display:flex; flex-wrap:nowrap; overflow:hidden; gap:25px; padding-bottom:10px;
-  -webkit-overflow-scrolling: touch; scroll-behavior: smooth;
-}
-.card { min-width:220px; flex:0 0 auto; border-radius:16px; background:white;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:var(--transition); padding:20px; cursor:pointer;}
+.card-container { display:flex; flex-wrap:nowrap; overflow:hidden; gap:25px; padding-bottom:10px; -webkit-overflow-scrolling: touch; scroll-behavior: smooth; }
+.card { min-width:220px; flex:0 0 auto; border-radius:16px; background:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:var(--transition); padding:20px; cursor:pointer;}
 .card:hover { transform: translateY(-8px) scale(1.03); box-shadow:0 8px 24px rgba(0,0,0,0.2);}
 .card-content h3 { color: var(--primary); margin-bottom:8px;}
 .card-content p { font-size:0.95rem; color:#555; }
 
-#search-bar { margin-top:40px; padding:12px; border-radius:25px; border:2px solid var(--accent);
-  width:60%; max-width:500px; transition:var(--transition); font-size:1rem;}
+#search-bar { margin-top:40px; padding:12px; border-radius:25px; border:2px solid var(--accent); width:60%; max-width:500px; transition:var(--transition); font-size:1rem;}
 #search-bar:focus { outline:none; box-shadow:0 0 10px var(--accent);}
 #suggestions { margin-top:10px; text-align:center; position:relative; z-index:10; }
+.suggestion { background: var(--card-bg); color: var(--accent); display: block; padding: 10px 15px; border-radius: 12px; margin: 5px auto; width: fit-content; cursor: pointer; font-weight: 500; box-shadow:0 4px 12px rgba(0,0,0,0.2); transition: var(--transition); }
+.suggestion:hover { background: var(--accent); color: var(--text-light); }
 
-/* Updated suggestion style for visibility */
-.suggestion {
-  background: var(--card-bg);   /* light background */
-  color: var(--accent);         /* green text */
-  display: block;
-  padding: 10px 15px;
-  border-radius: 12px;
-  margin: 5px auto;
-  width: fit-content;
-  cursor: pointer;
-  font-weight: 500;
-  box-shadow:0 4px 12px rgba(0,0,0,0.2);
-  transition: var(--transition);
-}
-.suggestion:hover {
-  background: var(--accent);  /* green background on hover */
-  color: var(--text-light);   /* white text on hover */
-}
+#detailSection { display:none; margin:20px auto; padding:20px; border-radius:16px; background: var(--card-bg); max-width:1200px; box-shadow:0 10px 25px rgba(0,0,0,0.15); text-align:left; color: var(--primary); }
+#detailSection h2, #detailSection h3, #detailSection p, #detailSection li { color: var(--primary); }
 
-#detailSection { 
-  display:none; 
-  margin:20px auto; 
-  padding:20px; 
-  border-radius:16px; 
-  background: var(--card-bg);
-  max-width:1200px; 
-  box-shadow:0 10px 25px rgba(0,0,0,0.15); 
-  text-align:left;
-  color: var(--primary); /* dark green text */
-}
-#detailSection h2, 
-#detailSection h3, 
-#detailSection p, 
-#detailSection li {
-  color: var(--primary); /* ensure readability */
-}
-
-footer { text-align:center; padding:25px; background: rgba(26,71,49,0.9);
-  color:white; margin-top:50px; border-top:3px solid var(--gold); }
+footer { text-align:center; padding:25px; background: rgba(26,71,49,0.9); color:white; margin-top:50px; border-top:3px solid var(--gold); }
 
 @keyframes fadeUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
 @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
@@ -121,55 +102,54 @@ footer { text-align:center; padding:25px; background: rgba(26,71,49,0.9);
 </style>
 </head>
 <body>
-
 <header>
-<h1>🌿 AyuCare</h1>
-<nav>
-<a href="#mission">Mission</a>
-<a href="#diseases">Diseases</a>
-<a href="#yoga">Yoga</a>
-<a href="#chatbot">Chatbot</a>
-<a href="#about">About</a>
-</nav>
+  <h1>🌿 AyuCare</h1>
+  <nav>
+    <a href="#mission">Mission</a>
+    <a href="#diseases">Diseases</a>
+    <a href="#yoga">Yoga</a>
+    <a href="#chatbot">Chatbot</a>
+    <a href="#about">About</a>
+  </nav>
 </header>
 
 <main>
-<div class="hero">
-<h2>Welcome to AyuCare</h2>
-<p>Your trusted Ayurveda & Yoga wellness companion — guided by tradition, supported by science.</p>
-<input type="text" id="search-bar" placeholder="🔍 Search diseases or yoga..." />
-<div id="suggestions"></div>
-<div id="detailSection"></div>
-</div>
+  <div class="hero">
+    <h2>Welcome to AyuCare</h2>
+    <p>Your trusted Ayurveda & Yoga wellness companion — guided by tradition, supported by science.</p>
+    <input type="text" id="search-bar" placeholder="🔍 Search diseases or yoga..." />
+    <div id="suggestions"></div>
+    <div id="detailSection"></div>
+  </div>
 
-<section id="mission">
-<h2 class="section-title">Our Mission</h2>
-<p>To bring the timeless wisdom of Ayurveda and Yoga to modern living, offering natural healing, holistic balance, and wellness for all.</p>
-</section>
+  <section id="mission">
+    <h2 class="section-title">Our Mission</h2>
+    <p>To bring the timeless wisdom of Ayurveda and Yoga to modern living, offering natural healing, holistic balance, and wellness for all.</p>
+  </section>
 
-<section id="chatbot">
-<h2 class="section-title">Chat with Our Ayurvedic Assistant</h2>
-<div id="chtl-inline-bot" style="width: 100%; height: 500px; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.2);"></div>
-</section>
+  <section id="chatbot">
+    <h2 class="section-title">Chat with Our Ayurvedic Assistant</h2>
+    <div id="chtl-inline-bot" style="width: 100%; height: 500px; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.2);"></div>
+  </section>
 
-<section id="diseases">
-<h2 class="section-title">Common Ailments & Ayurvedic Remedies</h2>
-<div id="disease-cards" class="card-container"></div>
-</section>
+  <section id="diseases">
+    <h2 class="section-title">Common Ailments & Ayurvedic Remedies</h2>
+    <div id="disease-cards" class="card-container"></div>
+  </section>
 
-<section id="yoga">
-<h2 class="section-title">Yoga for Mind & Body</h2>
-<div id="yoga-cards" class="card-container"></div>
-</section>
+  <section id="yoga">
+    <h2 class="section-title">Yoga for Mind & Body</h2>
+    <div id="yoga-cards" class="card-container"></div>
+  </section>
 
-<section id="about">
-<h2 class="section-title">About AyuCare</h2>
-<p>Founded by Ayurveda enthusiasts and wellness experts, AyuCare connects ancient Indian health practices with modern digital tools. Our platform offers herbal remedies, yoga postures, and holistic routines for better living.</p>
-</section>
+  <section id="about">
+    <h2 class="section-title">About AyuCare</h2>
+    <p>Founded by Ayurveda enthusiasts and wellness experts, AyuCare connects ancient Indian health practices with modern digital tools. Our platform offers herbal remedies, yoga postures, and holistic routines for better living.</p>
+  </section>
 </main>
 
 <footer>
-<p>© 2025 AyuCare | Inspired by Nature, Guided by Ayurveda 🌿</p>
+  <p>© 2025 AyuCare | Inspired by Nature, Guided by Ayurveda 🌿</p>
 </footer>
 
 <script>
@@ -178,8 +158,7 @@ window.chtlConfig = { chatbotId: "8663243241", display: "page_inline" }
 <script async data-id="8663243241" data-display="page_inline" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
 
 <script>
-let diseasesData = [];  // Will be loaded from data.json
-
+let diseasesData = []; // Loaded from data.json
 const diseaseContainer = document.getElementById("disease-cards");
 const yogaContainer = document.getElementById("yoga-cards");
 const searchInput = document.getElementById("search-bar");
@@ -188,29 +167,35 @@ const detailSection = document.getElementById("detailSection");
 
 // Fetch data.json
 fetch('data.json')
-  .then(response => response.json())
+  .then(res => res.json())
   .then(data => {
     diseasesData = data;
-    renderCards();                  // Render cards after data is loaded
+    renderCards();
     infiniteScroll(diseaseContainer, 0.5);
     infiniteScroll(yogaContainer, 0.5);
   })
   .catch(err => console.error("Failed to load data.json:", err));
 
-function renderCards(){
+function renderCards() {
   diseaseContainer.innerHTML = '';
   yogaContainer.innerHTML = '';
   diseasesData.forEach(d => {
     const dCard = document.createElement('div');
     dCard.className = 'card';
-    dCard.innerHTML = `<div class="card-content"><h3>${d.title} (${d.hindi})</h3><p>${d.summary}</p></div>`;
+    dCard.innerHTML = `<div class="card-content">
+                          <h3>${d.title} (${d.hindi})</h3>
+                          <p>${d.summary}</p>
+                       </div>`;
     dCard.onclick = () => showDetail(d);
     diseaseContainer.appendChild(dCard);
 
     d.yoga.forEach(y => {
       const yCard = document.createElement('div');
       yCard.className = 'card';
-      yCard.innerHTML = `<div class="card-content"><h3>${y.name}</h3><p>${y.desc}</p></div>`;
+      yCard.innerHTML = `<div class="card-content">
+                            <h3>${y.name}</h3>
+                            <p>${y.desc}</p>
+                         </div>`;
       yogaContainer.appendChild(yCard);
     });
   });
@@ -218,16 +203,15 @@ function renderCards(){
   yogaContainer.innerHTML += yogaContainer.innerHTML;
 }
 
-function showDetail(d){
+function showDetail(d) {
   detailSection.style.display = 'block';
-  detailSection.innerHTML = `
-    <h2>${d.title} (${d.hindi})</h2>
-    <p>${d.summary}</p>
-    <h3>Ayurvedic Remedies:</h3>
-    <ul>${d.remedies.map(x => `<li>${x}</li>`).join('')}</ul>
-    ${d.yoga ? `<h3>Yoga Poses:</h3><ul>${d.yoga.map(y => `<li>${y.name}: ${y.desc}</li>`).join('')}</ul>` : ''}
-  `;
-  detailSection.scrollIntoView({behavior:'smooth'});
+  detailSection.innerHTML = `<h2>${d.title} (${d.hindi})</h2>
+                             <p>${d.summary}</p>
+                             <h3>Ayurvedic Remedies:</h3>
+                             <ul>${d.remedies.map(x => `<li>${x}</li>`).join('')}</ul>
+                             ${d.yoga ? `<h3>Yoga Poses:</h3>
+                             <ul>${d.yoga.map(y => `<li>${y.name}: ${y.desc}</li>`).join('')}</ul>` : ''}`;
+  detailSection.scrollIntoView({ behavior: 'smooth' });
 }
 
 searchInput.addEventListener('input', () => {
@@ -235,109 +219,34 @@ searchInput.addEventListener('input', () => {
   suggestions.innerHTML = '';
   if (!q) return;
   const matches = diseasesData.filter(d =>
-    d.title.toLowerCase().includes(q) || 
-    (d.hindi && d.hindi.toLowerCase().includes(q)) || 
+    d.title.toLowerCase().includes(q) ||
+    (d.hindi && d.hindi.toLowerCase().includes(q)) ||
     (d.yoga && d.yoga.some(y => y.name.toLowerCase().includes(q)))
   );
   matches.forEach(m => {
     const s = document.createElement('div');
     s.className = 'suggestion';
     s.innerHTML = `<strong>${m.title} (${m.hindi})</strong><br><small>${m.summary}</small>`;
-    s.onclick = () => { searchInput.value = m.title; showDetail(m); suggestions.innerHTML = ''; };
+    s.onclick = () => { searchInput.value = m.title; showDetail(m); suggestions.innerHTML=''; };
     suggestions.appendChild(s);
   });
 });
 
-document.addEventListener('click', e => { if (!searchInput.contains(e.target)) suggestions.innerHTML = ''; });
+document.addEventListener('click', e => {
+  if (!searchInput.contains(e.target)) suggestions.innerHTML='';
+});
 
-function infiniteScroll(container, speed=0.5){
+function infiniteScroll(container, speed = 0.5) {
   let scrollPos = 0;
   const totalScroll = container.scrollWidth / 2;
-  function step(){
+  function step() {
     scrollPos += speed;
     if(scrollPos >= totalScroll) scrollPos = 0;
-    container.scrollTo({left: scrollPos, behavior: 'auto'});
+    container.scrollTo({ left: scrollPos, behavior: 'auto' });
     requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
 }
-</script>
-
-
-
-
-const diseaseContainer = document.getElementById("disease-cards");
-const yogaContainer = document.getElementById("yoga-cards");
-const searchInput = document.getElementById("search-bar");
-const suggestions = document.getElementById("suggestions");
-const detailSection = document.getElementById("detailSection");
-
-function renderCards(){
-  diseaseContainer.innerHTML=''; yogaContainer.innerHTML='';
-  diseasesData.forEach(d=>{
-    const dCard = document.createElement('div');
-    dCard.className='card';
-    dCard.innerHTML=`<div class="card-content"><h3>${d.title} (${d.hindi})</h3><p>${d.summary}</p></div>`;
-    dCard.onclick = ()=>showDetail(d);
-    diseaseContainer.appendChild(dCard);
-
-    d.yoga.forEach(y=>{
-      const yCard = document.createElement('div');
-      yCard.className='card';
-      yCard.innerHTML=`<div class="card-content"><h3>${y.name}</h3><p>${y.desc}</p></div>`;
-      yogaContainer.appendChild(yCard);
-    });
-  });
-  diseaseContainer.innerHTML += diseaseContainer.innerHTML;
-  yogaContainer.innerHTML += yogaContainer.innerHTML;
-}
-
-function showDetail(d){
-  detailSection.style.display='block';
-  detailSection.innerHTML = `
-    <h2>${d.title} (${d.hindi})</h2>
-    <p>${d.summary}</p>
-    <h3>Ayurvedic Remedies:</h3>
-    <ul>${d.remedies.map(x=>`<li>${x}</li>`).join('')}</ul>
-    ${d.yoga ? `<h3>Yoga Poses:</h3><ul>${d.yoga.map(y=>`<li>${y.name}: ${y.desc}</li>`).join('')}</ul>`: ''}
-  `;
-  detailSection.scrollIntoView({behavior:'smooth'});
-}
-
-searchInput.addEventListener('input',()=>{
-  const q = searchInput.value.toLowerCase(); 
-  suggestions.innerHTML='';
-  if(!q) return;
-  const matches = diseasesData.filter(d=>
-    d.title.toLowerCase().includes(q) || (d.hindi && d.hindi.toLowerCase().includes(q)) || 
-    (d.yoga && d.yoga.some(y=>y.name.toLowerCase().includes(q)))
-  );
-  matches.forEach(m=>{
-    const s = document.createElement('div'); 
-    s.className='suggestion';
-    s.innerHTML = `<strong>${m.title} (${m.hindi})</strong><br><small>${m.summary}</small>`;
-    s.onclick=()=>{ searchInput.value=m.title; showDetail(m); suggestions.innerHTML=''; };
-    suggestions.appendChild(s);
-  });
-});
-
-document.addEventListener('click',e=>{if(!searchInput.contains(e.target)) suggestions.innerHTML='';});
-
-function infiniteScroll(container,speed=0.5){
-  let scrollPos = 0;
-  const totalScroll = container.scrollWidth / 2;
-  function step(){
-    scrollPos += speed;
-    if(scrollPos >= totalScroll) scrollPos=0;
-    container.scrollTo({left:scrollPos, behavior:'auto'});
-    requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
-renderCards();
-infiniteScroll(diseaseContainer,0.5);
-infiniteScroll(yogaContainer,0.5);
 </script>
 </body>
 </html>
