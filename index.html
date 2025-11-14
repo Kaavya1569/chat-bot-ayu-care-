@@ -178,68 +178,91 @@ window.chtlConfig = { chatbotId: "8663243241", display: "page_inline" }
 <script async data-id="8663243241" data-display="page_inline" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
 
 <script>
-const diseasesData = [
-  {"title":"Anemia","hindi":"रक्ताल्पता","summary":"Low hemoglobin levels causing weakness","remedies":["Iron-rich diet (spinach, beetroot)","Amla juice"],"yoga":[{"name":"Bhujangasana","desc":"Cobra Pose to improve circulation"}]},
-  {"title":"Obstructive Sleep Apnea","hindi":"नींद में सांस की रुकावट","summary":"Breathing interruptions during sleep","remedies":["Nasya with medicated oils","Breathing exercises"],"yoga":[{"name":"Pranayama","desc":"Alternate nostril breathing"}]},
-  {"title":"Throat Infection","hindi":"गले का संक्रमण","summary":"Inflammation in the throat","remedies":["Tulsi tea with honey","Salt water gargle"],"yoga":[{"name":"Simhasana","desc":"Lion Pose to relieve throat"}]},
-  {"title":"Ear Infection","hindi":"कान का संक्रमण","summary":"Pain or infection in ear","remedies":["Warm sesame oil drops","Garlic oil application"],"yoga":[{"name":"Neck rotations","desc":"Gentle neck stretches"}]},
-  {"title":"Gallstones","hindi":"पित्ताशय की पथरी","summary":"Solid deposits in gallbladder","remedies":["Triphala decoction","Avoid fatty food"],"yoga":[{"name":"Pawanmuktasana","desc":"Wind relieving pose"}]},
-  {"title":"Gout","hindi":"गठिया","summary":"Joint pain due to uric acid","remedies":["Avoid purine-rich foods","Drink warm water"],"yoga":[{"name":"Tadasana","desc":"Mountain Pose for posture"}]},
-  {"title":"Hair Graying","hindi":"बाल सफेद होना","summary":"Premature hair greying","remedies":["Amla oil","Bhringraj paste"],"yoga":[{"name":"Head massage","desc":"Improves scalp circulation"}]},
-  {"title":"Hemorrhoids","hindi":"बवासीर","summary":"Swollen veins in anal region","remedies":["Triphala","Warm sitz baths"],"yoga":[{"name":"Pawanmuktasana","desc":"Relieves constipation"}]},
-  {"title":"Hypothyroidism","hindi":"अल्प थायरॉइड","summary":"Low thyroid hormone levels","remedies":["Ashwagandha","Avoid soy products"],"yoga":[{"name":"Sarvangasana","desc":"Shoulder Stand"}]},
-  {"title":"Hyperthyroidism","hindi":"अधिक थायरॉइड","summary":"High thyroid hormone levels","remedies":["Bugleweed herbal tea","Avoid caffeine"],"yoga":[{"name":"Paschimottanasana","desc":"Seated Forward Bend"}]},
-  {"title":"Kidney Infection","hindi":"गुर्दे का संक्रमण","summary":"Urinary tract infection affecting kidneys","remedies":["Drink plenty of water","Cranberry juice"],"yoga":[{"name":"Setu Bandhasana","desc":"Bridge Pose"}]},
-  {"title":"Lumbago","hindi":"कमर दर्द","summary":"Lower back pain","remedies":["Sesame oil massage","Warm compress"],"yoga":[{"name":"Bhujangasana","desc":"Cobra Pose"}]},
-  {"title":"Malaria","hindi":"मलेरिया","summary":"Fever caused by Plasmodium parasite","remedies":["Neem leaves decoction","Papaya leaf juice"],"yoga":[{"name":"Sukhasana","desc":"Seated breathing"}]},
-  {"title":"Migraine","hindi":"माइग्रेन","summary":"Severe headache, often one-sided","remedies":["Tulsi tea","Lavender oil massage"],"yoga":[{"name":"Shavasana","desc":"Deep relaxation"}]},
-  {"title":"Nausea","hindi":"मतली","summary":"Feeling of wanting to vomit","remedies":["Ginger tea","Peppermint leaves"],"yoga":[{"name":"Pawanmuktasana","desc":"Wind relieving pose"}]},
-  {"title":"Osteoporosis","hindi":"अस्थि क्षय","summary":"Weakening of bones","remedies":["Milk and sesame seeds","Sunlight exposure"],"yoga":[{"name":"Tadasana","desc":"Mountain Pose to strengthen bones"}]},
-  {"title":"Polycystic Ovary Syndrome (PCOS)","hindi":"पीसीओएस","summary":"Hormonal imbalance in women","remedies":["Cinnamon tea","Fenugreek seeds"],"yoga":[{"name":"Baddha Konasana","desc":"Bound Angle Pose"}]},
-  {"title":"Psoriasis","hindi":"सोरायसिस","summary":"Skin condition with red, scaly patches","remedies":["Neem paste","Aloe vera gel"],"yoga":[{"name":"Pranayama","desc":"Breathing to reduce stress"}]},
-  {"title":"Respiratory Infection","hindi":"साँस की बीमारी","summary":"Infections like cold or bronchitis","remedies":["Steam inhalation","Tulsi tea"],"yoga":[{"name":"Anulom Vilom","desc":"Alternate nostril breathing"}]},
-  {"title":"Sinusitis","hindi":"साइनस की समस्या","summary":"Inflammation of sinus cavities","remedies":["Steam inhalation","Turmeric milk"],"yoga":[{"name":"Setu Bandhasana","desc":"Bridge Pose to open chest"}]},
-  {"title":"Skin Allergies","hindi":"त्वचा की एलर्जी","summary":"Reaction of skin to irritants","remedies":["Aloe vera","Neem paste"],"yoga":[{"name":"Pranayama","desc":"Deep breathing"}]},
-  {"title":"Spondylitis","hindi":"स्पॉन्डिलाइटिस","summary":"Inflammation of spine","remedies":["Turmeric","Ginger"],"yoga":[{"name":"Bhujangasana","desc":"Cobra Pose"}]},
-  {"title":"Stomach Ulcer","hindi":"पेट का अल्सर","summary":"Open sore in stomach lining","remedies":["Amla juice","Avoid spicy food"],"yoga":[{"name":"Ardha Matsyendrasana","desc":"Half spinal twist"}]},
-  {"title":"Urinary Tract Infection (UTI)","hindi":"मूत्र मार्ग का संक्रमण","summary":"Infection in urinary tract","remedies":["Cranberry juice","Drink plenty of water"],"yoga":[{"name":"Pawanmuktasana","desc":"Wind relieving pose"}]},
-  {"title":"Varicose Veins","hindi":"वैरिस वेन्स","summary":"Swollen veins usually in legs","remedies":["Leg elevation","Horse chestnut extract"],"yoga":[{"name":"Viparita Karani","desc":"Legs up the wall pose"}]},
-  {"title":"Vertigo","hindi":"चक्कर आना","summary":"Feeling of spinning or dizziness","remedies":["Ginger tea","Adequate hydration"],"yoga":[{"name":"Shavasana","desc":"Deep relaxation"}]},
-  {"title":"Vitamin D Deficiency","hindi":"विटामिन डी की कमी","summary":"Low vitamin D levels","remedies":["Sunlight exposure","Milk & fortified foods"],"yoga":[{"name":"Surya Namaskar","desc":"Sun Salutation"}]},
-  {"title":"Weight Loss","hindi":"वजन कम होना","summary":"Unintended decrease in body weight","remedies":["Ashwagandha","Balanced diet with protein"],"yoga":[{"name":"Surya Namaskar","desc":"Full body workout"}]},
-  {"title":"Yeast Infection","hindi":"यीस्ट संक्रमण","summary":"Fungal infection","remedies":["Yogurt intake","Neem oil application"],"yoga":[{"name":"Supta Baddha Konasana","desc":"Reclined Bound Angle"}]},
-  {"title":"Back Pain","hindi":"पीठ दर्द","summary":"Discomfort in lower or upper back","remedies":["Warm sesame oil massage","Guggulu, Shallaki"],"yoga":[{"name":"Bhujangasana","desc":"Cobra Pose — Strengthens back"},{"name":"Balasana","desc":"Child Pose — Gentle stretch"}]},
-  {"title":"Acidity","hindi":"अम्लता","summary":"Heartburn due to excess Pitta","remedies":["Triphala","Fennel, licorice tea"],"yoga":[{"name":"Ardha Matsyendrasana","desc":"Half Spinal Twist"}]},
-  {"title":"Diarrhea","hindi":"दस्त","summary":"Loose stools, infection or food imbalance","remedies":["Rice gruel (kanji)","Cumin and ajwain decoction"],"yoga":[{"name":"Pavanamuktasana","desc":"Gas relief, aids digestion"}]},
-  {"title":"Cold & Cough","hindi":"सर्दी और खाँसी","summary":"Common viral infection","remedies":["Tulsi tea with honey","Steam inhalation with eucalyptus"],"yoga":[{"name":"Setu Bandhasana","desc":"Bridge Pose to open chest"}]},
-  {"title":"Fever","hindi":"बुखार","summary":"Raised body temperature due to infection","remedies":["Tulsi and ginger decoction","Stay hydrated with warm water"],"yoga":[{"name":"Savasana","desc":"Relaxation"}]},
-  {"title":"Headache","hindi":"सिरदर्द","summary":"Pain in head due to stress, tension, or illness","remedies":["Abhyanga (head massage)","Herbal tea with ginger"],"yoga":[{"name":"Shavasana","desc":"Relaxation"}]},
-  {"title":"Diabetes","hindi":"मधुमेह","summary":"High blood sugar","remedies":["Bitter gourd juice","Fenugreek seeds soaked in water"],"yoga":[{"name":"Dhanurasana","desc":"Bow Pose to stimulate pancreas"}]},
-  {"title":"Hypertension","hindi":"उच्च रक्तचाप","summary":"High blood pressure","remedies":["Garlic and cumin in diet","Meditation and Pranayama"],"yoga":[{"name":"Vrikshasana","desc":"Tree Pose for balance"}]},
-  {"title":"Constipation","hindi":"कब्ज़","summary":"Difficulty in bowel movement","remedies":["Triphala powder at night","Fiber rich diet"],"yoga":[{"name":"Malasana","desc":"Garland Pose"}]},
-  {"title":"Insomnia","hindi":"अनिद्रा","summary":"Difficulty in sleeping","remedies":["Warm milk with turmeric","Meditation before bed"],"yoga":[{"name":"Savasana","desc":"Deep relaxation"}]},
-  {"title":"Stress & Anxiety","hindi":"तनाव और चिंता","summary":"Mental pressure and worry","remedies":["Ashwagandha","Deep breathing exercises"],"yoga":[{"name":"Sukhasana","desc":"Seated meditation"}]},
-  {"title":"Obesity","hindi":"मोटापा","summary":"Excess body weight","remedies":["Triphal powder with warm water","Balanced diet with exercise"],"yoga":[{"name":"Surya Namaskar","desc":"Sun Salutation for full body workout"}]},
-  {"title":"Acne","hindi":"मुहांसों","summary":"Skin pimples and inflammation","remedies":["Neem paste","Aloe vera gel"],"yoga":[{"name":"Pranayama","desc":"Breathing exercises to reduce stress"}]},
-  {"title":"Arthritis","hindi":"गठिया","summary":"Joint inflammation and pain","remedies":["Ashwagandha and turmeric","Warm oil massage"],"yoga":[{"name":"Tadasana","desc":"Mountain Pose for posture"}]},
-  {"title":"Eye Strain","hindi":"आँखों की थकान","summary":"Tired eyes due to screens or work","remedies":["Palming exercises","Triphal powder eye wash"],"yoga":[{"name":"Trataka","desc":"Focused gazing"}]},
-  {"title":"Ear Pain","hindi":"कान का दर्द","summary":"Pain in ear due to infection or blockage","remedies":["Warm sesame oil drops","Garlic oil"],"yoga":[{"name":"Neck stretches","desc":"Gentle neck movement"}]},
-  {"title":"Thyroid","hindi":"थायरॉइड","summary":"Hormonal imbalance","remedies":["Kalonji seeds","Avoid excess processed food"],"yoga":[{"name":"Sarvangasana","desc":"Shoulder Stand"}]},
-  {"title":"Menstrual Cramps","hindi":"मासिक धर्म में दर्द","summary":"Pain during periods","remedies":["Ginger tea","Warm oil massage"],"yoga":[{"name":"Supta Baddha Konasana","desc":"Reclined Bound Angle"}]},
-  {"title":"Constipation","hindi":"कब्ज़","summary":"Difficulty in bowel movement","remedies":["Triphala powder at night","Fiber rich diet"],"yoga":[{"name":"Malasana","desc":"Garland Pose"}]},
-  {"title":"Hair Fall","hindi":"बाल झड़ना","summary":"Excess hair loss","remedies":["Amla oil massage","Bhringraj powder"],"yoga":[{"name":"Head massage","desc":"Gentle scalp massage"}]},
-  {"title":"Kidney Stones","hindi":"गुर्दे में पथरी","summary":"Solid mineral deposits in kidneys","remedies":["Chandan + Haritaki decoction","Stay hydrated"],"yoga":[{"name":"Pawanmuktasana","desc":"Wind relieving pose"}]},
-  {"title":"Liver Issues","hindi":"जिगर की समस्या","summary":"Liver disorders","remedies":["Triphala churna","Milk thistle (Ayurvedic)"],"yoga":[{"name":"Ardha Matsyendrasana","desc":"Half spinal twist"}]},
-  {"title":"Allergies","hindi":"एलर्जी","summary":"Immune reaction to substances","remedies":["Tulsi and honey","Avoid allergens"],"yoga":[{"name":"Pranayama","desc":"Deep breathing exercises"}]},
-  {"title":"Cold Feet & Hands","hindi":"ठंडी हाथ-पाँव","summary":"Poor circulation","remedies":["Warm oil massage","Ginger tea"],"yoga":[{"name":"Surya Namaskar","desc":"Boosts circulation"}]},
-  {"title":"Sore Throat","hindi":"गले में खराश","summary":"Throat irritation or infection","remedies":["Honey and turmeric","Warm salt water gargle"],"yoga":[{"name":"Simhasana","desc":"Lion Pose to open throat"}]},
-  {"title":"Joint Pain","hindi":"संधि दर्द","summary":"Pain in knees, elbows, etc.","remedies":["Sesame oil massage","Turmeric milk"],"yoga":[{"name":"Tadasana","desc":"Mountain Pose for posture"}]},
-  {"title":"Obesity","hindi":"मोटापा","summary":"Excess body weight","remedies":["Fenugreek seeds","Balanced diet & exercise"],"yoga":[{"name":"Surya Namaskar","desc":"Sun Salutation"}]},
-  {"title":"Bronchitis","hindi":"ब्रोंकाइटिस","summary":"Inflammation of lungs","remedies":["Tulsi tea","Steam inhalation"],"yoga":[{"name":"Pranayama","desc":"Breathing exercises"}]},
-  {"title":"Asthma","hindi":"दमा","summary":"Airway inflammation and breathing difficulty","remedies":["Sitopaladi churna","Breathing exercises"],"yoga":[{"name":"Anulom Vilom","desc":"Alternate nostril breathing"}]},
-  {"title":"Constipation","hindi":"कब्ज़","summary":"Difficulty in bowel movement","remedies":["Triphala","Warm water"],"yoga":[{"name":"Malasana","desc":"Garland Pose"}]},
-  {"title":"Piles","hindi":"बवासीर","summary":"Swollen veins in rectum","remedies":["Triphal churna","Avoid straining"],"yoga":[{"name":"Pawanmuktasana","desc":"Wind relieving pose"}]}
-]
+let diseasesData = [];  // Will be loaded from data.json
+
+const diseaseContainer = document.getElementById("disease-cards");
+const yogaContainer = document.getElementById("yoga-cards");
+const searchInput = document.getElementById("search-bar");
+const suggestions = document.getElementById("suggestions");
+const detailSection = document.getElementById("detailSection");
+
+// Fetch data.json
+fetch('data.json')
+  .then(response => response.json())
+  .then(data => {
+    diseasesData = data;
+    renderCards();                  // Render cards after data is loaded
+    infiniteScroll(diseaseContainer, 0.5);
+    infiniteScroll(yogaContainer, 0.5);
+  })
+  .catch(err => console.error("Failed to load data.json:", err));
+
+function renderCards(){
+  diseaseContainer.innerHTML = '';
+  yogaContainer.innerHTML = '';
+  diseasesData.forEach(d => {
+    const dCard = document.createElement('div');
+    dCard.className = 'card';
+    dCard.innerHTML = `<div class="card-content"><h3>${d.title} (${d.hindi})</h3><p>${d.summary}</p></div>`;
+    dCard.onclick = () => showDetail(d);
+    diseaseContainer.appendChild(dCard);
+
+    d.yoga.forEach(y => {
+      const yCard = document.createElement('div');
+      yCard.className = 'card';
+      yCard.innerHTML = `<div class="card-content"><h3>${y.name}</h3><p>${y.desc}</p></div>`;
+      yogaContainer.appendChild(yCard);
+    });
+  });
+  diseaseContainer.innerHTML += diseaseContainer.innerHTML;
+  yogaContainer.innerHTML += yogaContainer.innerHTML;
+}
+
+function showDetail(d){
+  detailSection.style.display = 'block';
+  detailSection.innerHTML = `
+    <h2>${d.title} (${d.hindi})</h2>
+    <p>${d.summary}</p>
+    <h3>Ayurvedic Remedies:</h3>
+    <ul>${d.remedies.map(x => `<li>${x}</li>`).join('')}</ul>
+    ${d.yoga ? `<h3>Yoga Poses:</h3><ul>${d.yoga.map(y => `<li>${y.name}: ${y.desc}</li>`).join('')}</ul>` : ''}
+  `;
+  detailSection.scrollIntoView({behavior:'smooth'});
+}
+
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.toLowerCase();
+  suggestions.innerHTML = '';
+  if (!q) return;
+  const matches = diseasesData.filter(d =>
+    d.title.toLowerCase().includes(q) || 
+    (d.hindi && d.hindi.toLowerCase().includes(q)) || 
+    (d.yoga && d.yoga.some(y => y.name.toLowerCase().includes(q)))
+  );
+  matches.forEach(m => {
+    const s = document.createElement('div');
+    s.className = 'suggestion';
+    s.innerHTML = `<strong>${m.title} (${m.hindi})</strong><br><small>${m.summary}</small>`;
+    s.onclick = () => { searchInput.value = m.title; showDetail(m); suggestions.innerHTML = ''; };
+    suggestions.appendChild(s);
+  });
+});
+
+document.addEventListener('click', e => { if (!searchInput.contains(e.target)) suggestions.innerHTML = ''; });
+
+function infiniteScroll(container, speed=0.5){
+  let scrollPos = 0;
+  const totalScroll = container.scrollWidth / 2;
+  function step(){
+    scrollPos += speed;
+    if(scrollPos >= totalScroll) scrollPos = 0;
+    container.scrollTo({left: scrollPos, behavior: 'auto'});
+    requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+</script>
+
 
 
 
